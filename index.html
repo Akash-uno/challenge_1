@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<script>
+    function ValidateEmail(inputText) {
+        var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+        if (inputText.value.match(mailformat)) {
+            document.form1.text1.focus();
+            return true;
+        }
+        else {
+            alert("You have entered an invalid email address!");
+            document.form1.text1.focus();
+            return false;
+        }
+    }
+</script>
+
+<body >
+    
+    <h1>login page</h1>
+    <form>
+        <div class=" container" onclick="ValidateEmail()">
+    <label for="uemail"><b>USER EMAIL:</b></label><br><br>
+    <input type="email" id="uemail" placeholder="Enter email" onclick="ValidateEmail(document.form1.text1)"
+        name="uemail" required><br><br>
+    <label for="pwd"><b>PASSWORD:</b></label><br><br>
+    <input type="password" id="pwd" placeholder="Enter Password" name="psw" required><br>
+    <input type="checkbox" onclick="myFunction()">Show Password<br><br>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("pwd");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+
+
+    <button type="submit" class="loginbtn">LOGIN</button><br>
+    <label><input type="checkbox" checked="checked" name="remember">Remember me</label>
+
+    </div>
+    <script src="script.js"></script>
+
+    <div class="cancelcontainer">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="forgotbtn">Forgot <a href="#">password?</a></span>
+    </div>
+
+
+    </form>
+
+</body>
+
+</html>
